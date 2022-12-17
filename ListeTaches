@@ -6,6 +6,8 @@ using namespace std;
 int main()
 {
     int tache; //les noms des taches
+    cout << "Veuillez saisir un numero de tache entre 1 et 8"<<endl;
+    cin >> tache;
     switch(tache)
     {
         case 1 : cout<<"renommer une tache"<<endl;
