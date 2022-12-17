@@ -5,27 +5,28 @@ using namespace std;
 
 int main()
 {
-    string tache; //les noms des taches
+    int tache; //les noms des taches
     switch(tache)
     {
-        case 1 : "renommer une tache";
-        break;
-        case 2 : "dupliquer une tache";
-        break;
-        case 3 : "modifier les chemins des taches";
-        break;
-        case 4 : "afficher le chemin de la tache";
-        break;
-        case 5 : "creer une execution retardee";
-        break;
-        case 6 : "modifier l'intervalle de temps entre deux cycles";
-        break;
-        case 7 : "selectionnez le nombre de cycle";
-        break;
-        case 8 : "executez la tache immediatement";
-        break;
-        default : "saisir une tache entre 1 et 8";
+        case 1 : cout<<"renommer une tache"<<endl;
+            break;
+        case 2 : cout<<"dupliquer une tache"<<endl;
+            break;
+        case 3 : cout<<"modifier les chemins des taches"<<endl;
+            break;
+        case 4 : cout<<"afficher le chemin de la tache"<<endl;
+            break;
+        case 5 : cout<<"creer une execution retardee"<<endl;
+            break;
+        case 6 : cout<<"modifier l'intervalle de temps entre deux cycles"<<endl;
+            break;
+        case 7 : cout<<"selectionnez le nombre de cycle"<<endl;
+            break;
+        case 8 : cout<<"executez la tache immediatement"<<endl;
+            break;
+        default : cout<<"saisir une tache entre 1 et 8"<<endl;
 
     }
     return 0;
 }
+
