@@ -1,0 +1,31 @@
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+int main()
+{
+    string tache; //les noms des taches
+    switch(tache)
+    {
+        case 1 : "renommer une tache";
+        break;
+        case 2 : "dupliquer une tache";
+        break;
+        case 3 : "modifier les chemins des taches";
+        break;
+        case 4 : "afficher le chemin de la tache";
+        break;
+        case 5 : "creer une execution retardee";
+        break;
+        case 6 : "modifier l'intervalle de temps entre deux cycles";
+        break;
+        case 7 : "selectionnez le nombre de cycle";
+        break;
+        case 8 : "executez la tache immediatement";
+        break;
+        default : "saisir une tache entre 1 et 8";
+
+    }
+    return 0;
+}
