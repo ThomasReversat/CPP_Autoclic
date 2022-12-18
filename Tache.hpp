@@ -1,23 +1,21 @@
-//
-#ifndef CPP_AUTO_CLICK_TACHE_HPP
-#define CPP_AUTO_CLICK_TACHE_HPP
-#include <string>
+#ifndef AUTOCLICKER_PROJET_TACHE_HPP
+#define AUTOCLICKER_PROJET_TACHE_HPP
+
 #include <iostream>
+#include <string>
+#include <windows.h>
 using namespace std;
 
 class Tache
 {
 private:
-    string tache; // le nom de la tache
-
+    string nom; // une tache est une chaine de caracteres ; un string
 public:
     string getNom();
-    string dupliquerTache(int n,string tache); // dupliquer la tache
-    string renommerTache(string t,string mot); //renomme la tache
-
-
-
+    string dupilquerTache(string t,int n);
+    void supprimertache(string t);
+    string ajouterTache(string t);
 };
 
 
-#endif //CPP_AUTO_CLICK_TACHE_HPP
+#endif //AUTOCLICKER_PROJET_TACHE_HPP
