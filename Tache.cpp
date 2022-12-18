@@ -1,26 +1,32 @@
 #include "Tache.hpp"
 
-using namespace std;
 
-string Tache ::getNom()
+string Tache::getNom()
 {
-    return tache;
+    return nom;
 }
-
-string Tache::dupliquerTache(int n,string tache)
+string Tache::dupilquerTache(string t,int n)
 {
-    string t;
-    for(int i=0;i<n;i++)
+    /* duplique une tache fournie en parametre n fois */
+    string tache = " ";
+    for(int i=0;i<n;i++)/* n tours de boucles */
     {
-        t = tache;
-        cout <<tache<<endl; // on affiche n fois a l'ecran
-
+        tache = tache +"\n"+t+"\n";
     }
-    return t;
-}
 
-string Tache::renommerTache(string tache,string mot)
+return tache;
+}
+void Tache::supprimertache(string t)
 {
-    tache=mot;
-    return tache;
+    /* supprime une tache passee en parametre */
+
+    t.clear(); // supprime une tache t
+
+}
+string Tache::ajouterTache(string t)
+{
+    /* ajouter une tache t dans une autre tache  */
+    string tache=" ";
+    tache.append(t);
+    return t;
 }
