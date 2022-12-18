@@ -1,34 +1,18 @@
-#include <iostream>
-#include <string>
-
-using namespace std;
-
-int main()
-{
-    int tache; //les noms des taches
-    cout << "Veuillez saisir un numero de tache entre 1 et 8"<<endl;
+int main() {
+    int tache(0);
+    cout <<"Veuillez saisir un entier"<<endl;
     cin >> tache;
-    switch(tache)
+    switch (tache)
     {
-        case 1 : cout<<"renommer une tache"<<endl;
-            break;
-        case 2 : cout<<"dupliquer une tache"<<endl;
-            break;
-        case 3 : cout<<"modifier les chemins des taches"<<endl;
-            break;
-        case 4 : cout<<"afficher le chemin de la tache"<<endl;
-            break;
-        case 5 : cout<<"creer une execution retardee"<<endl;
-            break;
-        case 6 : cout<<"modifier l'intervalle de temps entre deux cycles"<<endl;
-            break;
-        case 7 : cout<<"selectionnez le nombre de cycle"<<endl;
-            break;
-        case 8 : cout<<"executez la tache immediatement"<<endl;
-            break;
-        default : cout<<"saisir une tache entre 1 et 8"<<endl;
-
-    }
-    return 0;
-}
+        case 0 : cout << "Click Interval"<<endl; // tache 1
+        break;
+        case 1: cout <<"Click Options"<<endl; // tache 2
+        break;
+        case 2 : cout <<"Click Repeat"<<endl; // tache 3
+        break;
+        case 3 : cout <<"Cursor Position"<<endl; // tache 4
+        break;
+        case 4 : cout <<"Autre options"<<endl; // tache 5
+        break;
+        default : cout <<"saisir un chiffre entre 1 et 4"<<endl;
 
