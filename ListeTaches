@@ -1,3 +1,22 @@
+#include <iostream>
+#include <windows.h> // SDK windows
+#include <string>
+
+using namespace std;
+#define _WIN32_WINNT 0x0500
+#include <windows.h>
+void clic_ici(int x, int y)
+{
+    INPUT i[2];
+    memset(i, 0, sizeof(i));
+    i[0].type = i[1].type = INPUT_MOUSE;
+    i[0].mi.dx = (65535. / (double)GetSystemMetrics(SM_CXSCREEN)) * x;
+    i[0].mi.dy = (65535. / (double)GetSystemMetrics(SM_CYSCREEN)) * y;
+    i[0].mi.dwFlags = MOUSEEVENTF_MOVE|MOUSEEVENTF_ABSOLUTE|MOUSEEVENTF_LEFTDOWN;
+    i[1].mi.dwFlags = MOUSEEVENTF_LEFTUP;
+    SendInput(2, i, sizeof(INPUT));
+}
+
 int main() {
     int tache(0);
     cout <<"Veuillez saisir un entier"<<endl;
