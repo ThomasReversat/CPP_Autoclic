@@ -50,6 +50,15 @@ int main() {
     }
 
     enchainer_clic(10,3,10);
+     /* =================================================================================
+     *
+     *
+     *
+     */
+    
+    SetCursorPos(0,0); // placer le curseur n'importe ou sur l'ecran
+    Sleep(5000);
+
 
     return 0;
 }
