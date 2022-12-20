@@ -34,14 +34,40 @@ void clic_tache_duree_simple(int x, int y, std::string tache)
     cin >>tache;
     clic_ici(x,y);
 }
+string renommerTache(string mot)
+{
+    /*renommer une tache t */
+    string tache = mot;
+    return tache;
+}
+void supprimerTache(string t)
+{
+    t.clear(); // supprime une tache t
+}
 int main() {
-
+    int var0;
     int tache(0);
-    cout <<"Veuillez saisir un entier"<<endl;
+    cout <<"Bonjour"<<endl;
+    cout <<"Veuillez saisir un entier qui represente la liste des taches"<<endl;
     cin >> tache;
     switch (tache)
     {
         case 0 : cout << "Click Interval"<<endl; // tache 1
+        cout <<"Souhaitez vous renommer la tache ?"<<endl;
+        cout << "Souhaitez vous la supprimer ?"<<endl;
+        cout <<"Souhaitez vous dupliquez la tache"<<endl;
+        cout <<"Souhaitez vous ajoutez la tache"<<endl;
+        cout <<"Veuillez saisir un entier entre 1 et 4"<<endl;
+        cin >> var0;
+        if (var0 == 1)
+        {
+
+            renommerTache("Click Interval");
+        }
+        else if (var0 == 2)
+        {
+            supprimerTache("Click Interval");
+        }
         break;
         case 1: cout <<"Click Options"<<endl; // tache 2
         break;
@@ -70,5 +96,4 @@ int main() {
 
     return 0;
 }
-
 
