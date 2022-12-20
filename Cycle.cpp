@@ -34,5 +34,15 @@ Cycle::Cycle() {
     this->y=y;
 }
 
+int Cycle::getX()
+{
+    /* renvoie la coordonnes X */
+    return x;
+}
+int Cycle::getY()
+{
+    /* renvoie la coordonnes Y */
+    return y;
+}
 
 
