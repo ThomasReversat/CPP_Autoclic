@@ -14,6 +14,7 @@ private:
 public:
     void clic_ici(int x,int y);
     void enchainer_clic(int x,int y,int nb);
+    void clic_duree(int x,int y,float t,int nb);
     Cycle();
     int getX();
     int getY();
