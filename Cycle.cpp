@@ -56,3 +56,10 @@ void Cycle:: clic_duree(int x,int y,float t,int nb)
     }
 }
 
+void Cycle::clic_tache_duree_simple(int x, int y, std::string tache)
+{
+    /* realise un clique à la position (x,y) pour une tache donnee */
+    cout <<"Veuillez saisir une tache"<<endl;
+    cin >>tache;
+    clic_ici(x,y);
+}
