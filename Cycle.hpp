@@ -6,6 +6,7 @@
 #include <time.h>
 #include <windows.h>
 #include <stdlib.h>
+#include <string>
 
 class Cycle{
 private:
@@ -15,6 +16,7 @@ public:
     void clic_ici(int x,int y);
     void enchainer_clic(int x,int y,int nb);
     void clic_duree(int x,int y,float t,int nb);
+    void clic_tache_duree_simple(int x,int y,std::string tache);
     Cycle();
     int getX();
     int getY();
