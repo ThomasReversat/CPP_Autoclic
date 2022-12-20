@@ -1,5 +1,6 @@
 #include <iostream>
 #include <windows.h> // SDK windows
+#include <windowsx.h>
 #include <string>
 #include "Cycle.hpp"
 
@@ -26,7 +27,13 @@ void enchainer_clic(int x,int y,int nb)
     }
 }
 
-
+void clic_tache_duree_simple(int x, int y, std::string tache)
+{
+    /* realise un clique à la position (x,y) pour une tache donnee */
+    cout <<"Veuillez saisir une tache"<<endl;
+    cin >>tache;
+    clic_ici(x,y);
+}
 int main() {
 
     int tache(0);
@@ -49,17 +56,19 @@ int main() {
 
     }
 
-    enchainer_clic(10,3,10);
-     /* =================================================================================
+   // enchainer_clic(10,3,10);
+    /* =================================================================================
      *
      *
      *
      */
-    
+
     SetCursorPos(0,0); // placer le curseur n'importe ou sur l'ecran
     Sleep(5000);
+    clic_tache_duree_simple(10,10,"click options");
 
 
     return 0;
 }
+
 
