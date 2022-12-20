@@ -45,4 +45,14 @@ int Cycle::getY()
     return y;
 }
 
+void Cycle:: clic_duree(int x,int y,float t,int nb)
+{
+    /* effectue un clic au position x et y de duree t un nombre de fois nb */
+
+    for(int i=0;i<nb;i++)
+    {
+        clic_ici(x,y);
+        Sleep(t); // une pause en milliseconde
+    }
+}
 
