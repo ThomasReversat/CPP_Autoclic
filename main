@@ -44,6 +44,23 @@ void supprimerTache(string t)
 {
     t.clear(); // supprime une tache t
 }
+string dupliquerTache(string t,int n)
+{
+    string tache = " ";
+    for(int i=0;i<n;i++)/* n tours de boucles */
+    {
+        tache = tache +"\n"+t+"\n";
+    }
+    return tache;
+}
+string ajouterTache(string t)
+{
+    /* ajouter une tache t dans une autre tache  */
+    string tache=" ";
+    tache.append(t);
+    return t;
+}
+
 int main() {
     int var0;
     int tache(0);
@@ -62,11 +79,23 @@ int main() {
         if (var0 == 1)
         {
 
-            renommerTache("Click Interval");
+            renommerTache("Clicks Interval"); // on renomme la tache en parametre
+            cout<<renommerTache("Clicks Interval")<<endl; // on l'affiche
         }
         else if (var0 == 2)
         {
-            supprimerTache("Click Interval");
+            supprimerTache("Clicks Interval"); // on supprime la tache passe en parametre
+        }
+        else if (var0==3)
+        {
+            string a=dupliquerTache("Click interval",3);
+            cout << dupliquerTache("Click interval",3)<<endl;
+
+        }
+        else if (var0 == 4){
+            ajouterTache("Click Interval");
+            cout <<ajouterTache("Click Interval")<<endl;
+
         }
         break;
         case 1: cout <<"Click Options"<<endl; // tache 2
