@@ -15,5 +15,7 @@ public:
     void clic_ici(int x,int y);
     void enchainer_clic(int x,int y,int nb);
     Cycle();
+    int getX();
+    int getY();
 };
 #endif //AUTOCLICKER_PROJET_CYCLE_HPP
