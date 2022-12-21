@@ -1,4 +1,5 @@
 #include <iostream>
+#include <chrono>
 #include <windows.h> // SDK windows
 #include <windowsx.h>
 #include <string>
@@ -60,6 +61,11 @@ string ajouterTache(string t)
     tache.append(t);
     return t;
 }
+template<
+        class Rep, // nombre de ticks de type rep
+        class Period = std::ratio<1> //periode de ticks rationelles au moment de la compilation
+> class duration;
+
 
 int main() {
     int var0;
@@ -76,29 +82,27 @@ int main() {
         cout <<"Souhaitez vous ajoutez la tache"<<endl;
         cout <<"Veuillez saisir un entier entre 1 et 4"<<endl;
         cin >> var0;
-        if (var0 == 1)
+        switch(var0)
         {
-
-            renommerTache("Clicks Interval"); // on renomme la tache en parametre
-            cout<<renommerTache("Clicks Interval")<<endl; // on l'affiche
-        }
-        else if (var0 == 2)
-        {
-            supprimerTache("Clicks Interval"); // on supprime la tache passe en parametre
-        }
-        else if (var0==3)
-        {
-            string a=dupliquerTache("Click interval",3);
-            cout << dupliquerTache("Click interval",3)<<endl;
-
-        }
-        else if (var0 == 4){
-            ajouterTache("Click Interval");
-            cout <<ajouterTache("Click Interval")<<endl;
-
+            case 0 :
+                renommerTache("Click Interval");
+                cout <<renommerTache("Click Interval")<<endl;
+                break;
+            case 1 :
+                supprimerTache("Click Interval");
+                break;
+            case 2 :
+                dupliquerTache("Click Interval",5);
+                cout <<dupliquerTache("Click Interval",5)<<endl;
+                break;
+            case 3 :
+                ajouterTache("Click Interval");
+                break;
+            default: cout <<"saisir un entier entre 0 et 3"<<endl;
         }
         break;
         case 1: cout <<"Click Options"<<endl; // tache 2
+
         break;
         case 2 : cout <<"Click Repeat"<<endl; // tache 3
         break;
@@ -107,6 +111,8 @@ int main() {
         case 4 : cout <<"Autre options"<<endl; // tache 5
         break;
         default : cout <<"saisir un chiffre entre 1 et 4"<<endl;
+
+        
 
 
     }
@@ -118,11 +124,12 @@ int main() {
      *
      */
 
-    SetCursorPos(0,0); // placer le curseur n'importe ou sur l'ecran
-    Sleep(5000);
-    clic_tache_duree_simple(10,10,"click options");
-
-
+   // SetCursorPos(0,0); // placer le curseur n'importe ou sur l'ecran
+  //  Sleep(5000);
+ //   clic_tache_duree_simple(10,10,"click options");
+    mouse_event(MOUSEEVENTF_LEFTDOWN, 10, 100, 0, 0); //simulation double clic gauche
+Sleep(9000);
+    mouse_event(MOUSEEVENTF_LEFTUP, 0, 0, 0, 0); // double clic droit
     return 0;
 }
 
