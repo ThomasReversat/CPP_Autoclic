@@ -66,63 +66,155 @@ string ajouterTache(string t)
 
 int main() {
     string tache0;
+    string tache1;
+    string tache2;
+    string tache3;
     int var0;
+    int var1;
+    int var2;
+    int var3;
     int tache(0);
+
     cout <<"Bonjour"<<endl;
     cout <<"Veuillez saisir un entier qui representera la liste des taches"<<endl;
     cout << " Cet entier doit etre compris entre 0 et 4"<<endl;
     cin >> tache;
-    switch (tache)
-    {
-        case 0 : cout << "Click Interval"<<endl; // tache 1
-        cout <<"Souhaitez vous renommer la tache ?"<<endl;
-        cout << "Souhaitez vous la supprimer ?"<<endl;
-        cout <<"Souhaitez vous dupliquez la tache"<<endl;
-        cout <<"Souhaitez vous ajoutez la tache"<<endl;
-        cout <<"Veuillez resaisir un entier mais compris entre 1 et 4"<<endl;
-        cin >> var0;
-        switch(var0)
-        {
-            case 0 :
-                cout << "Veuillez saisir le nom d'une tache "<<endl;
-                cin >> tache0;
-                renommerTache(tache0);
-                cout <<renommerTache("Click Interval")<<endl;
-                break;
-            case 1 :
-                cout << "Saisir une tache que vous souhaitez supprimez"<<endl;
-                cin >> tache0;
-                supprimerTache(tache0);
-                break;
-            case 2 :
-                cout << "Saisir une tache que vous souhaitez dupliquez"<<endl;
-                cin >> tache0;
-                dupliquerTache(tache0,5);
-                cout <<dupliquerTache(tache0,5)<<endl;
-                break;
-            case 3 :
-                cout << "saisir une tache que vous souhaitez ajoutez dans la liste"<<endl;
-                cin >> tache0;
-                ajouterTache(tache0);
-                break;
-            default: cout <<"resaisir un entier entre 0 et 3"<<endl;
-        }
-        break;
-        case 1: cout <<"Click Options"<<endl; // tache 2
+    switch (tache) {
+        case 0 :
+            cout << "Click Interval" << endl; // tache 1
+            cout << "Souhaitez vous renommer la tache ?" << endl;
+            cout << "Souhaitez vous la supprimer ?" << endl;
+            cout << "Souhaitez vous dupliquez la tache" << endl;
+            cout << "Souhaitez vous ajoutez la tache" << endl;
+            cout << "Veuillez saisir un entier mais compris entre 1 et 4" << endl;
+            cin >> var0;
+            switch (var0) {
+                case 0 :
+                    cout << "Veuillez saisir le nom d'une tache " << endl;
+                    cin >> tache0;
+                    renommerTache(tache0);
+                    cout << renommerTache("Click Interval") << endl;
+                    break;
+                case 1 :
+                    cout << "Saisir une tache que vous souhaitez supprimez" << endl;
+                    cin >> tache0;
+                    supprimerTache(tache0);
+                    break;
+                case 2 :
+                    cout << "Saisir une tache que vous souhaitez dupliquez" << endl;
+                    cin >> tache0;
+                    dupliquerTache(tache0, 5);
+                    cout << dupliquerTache(tache0, 5) << endl;
+                    break;
+                case 3 :
+                    cout << "saisir une tache que vous souhaitez ajoutez dans la liste" << endl;
+                    cin >> tache0;
+                    ajouterTache(tache0);
+                    break;
+                default:
+                    cout << "resaisir un entier entre 0 et 3" << endl;
+            }
+            break;
 
-        break;
-        case 2 : cout <<"Click Repeat"<<endl; // tache 3
-        break;
-        case 3 : cout <<"Cursor Position"<<endl; // tache 4
-        break;
-        case 4 : cout <<"Autre options"<<endl; // tache 5
-        break;
-        default : cout <<"resaisir un chiffre entre 1 et 4"<<endl;
+        case 1:
+            cout << "Click Options" << endl; // tache 2
+            cout << "Souhaitez vous renommer la tache ?" << endl;
+            cout << "Souhaitez vous la supprimer ?" << endl;
+            cout << "Souhaitez vous dupliquez la tache" << endl;
+            cout << "Souhaitez vous ajoutez la tache" << endl;
+            cout << "Veuillez saisir un entier mais compris entre 0 et 4" << endl;
+            switch(var1)
+            {
+                case 0 : cout << "Veuillez saisir le nom d'une tache"<<endl;
+                cin >> tache1;
+                renommerTache(tache1);
+                cout << renommerTache(tache1);
+                break;
 
+                case 1 : cout << "Veuillez saisir une tache que vous souhaitez supprimez"<<endl;
+                cin >>tache1;
+                supprimerTache(tache1);
+                break;
 
+                case 2 : cout << "Veuillez saisir une tache que vous souhaitez dupliquez"<<endl;
+                cin >>tache1;
+                    dupliquerTache(tache1,5);
+                    break;
 
+                case 3 : cout <<"veuillez saisir une tache que vous souhaitez ajoutez dans la liste"<<endl;
+                cin >>tache1;
+                    ajouterTache(tache1);
+                    break;
+
+                default : cout <<"resaisir un entier compris entre 1 et 3"<<endl;
+
+            }
+
+            break;
+        case 2 :
+            cout << "Click Repeat" << endl; // tache 3
+            cout << "Souhaitez vous renommer la tache ?" << endl;
+            cout << "Souhaitez vous la supprimer ?" << endl;
+            cout << "Souhaitez vous dupliquez la tache" << endl;
+            cout << "Souhaitez vous ajoutez la tache" << endl;
+            cout << "Veuillez saisir un entier mais compris entre 0 et 3" << endl;
+            switch(var2)
+            {
+                case 0 : cout << "Veuillez saisir le nom d'une tache"<<endl;
+                cin >>tache2;
+                    renommerTache(tache2);
+                    cout <<renommerTache(tache2);
+                    break;
+
+                case 1: cout << "Veuillez saisir une tache que vous souhaitez supprimez"<<endl;
+                cin >> tache2;
+                    supprimerTache(tache2);
+                    break;
+                case 2: cout << "Veuillez saisir une tache que vous souhaitez dupliquez "<<endl;
+                cin >>tache2;
+                    dupliquerTache(tache2,10);
+                    break;
+                case 3: cout << "Veuillez saisir une tache que vous souhaitez ajoutez dans la liste"<<endl;
+                cin >>tache2;
+                    ajouterTache(tache2);
+                    break;
+                default: cout <<"resaisir un entier compris entre 1 et 3"<<endl;
+            }
+            break;
+        case 3 :
+            cout << "Cursor Position" << endl; // tache 4
+            cout << "Souhaitez vous renommer la tache ?" << endl;
+            cout << "Souhaitez vous la supprimer ?" << endl;
+            cout << "Souhaitez vous dupliquez la tache" << endl;
+            cout << "Souhaitez vous ajoutez la tache" << endl;
+            cout << "Veuillez saisir un entier mais compris entre 0 et 4" << endl;
+            switch(var3)
+            {
+                case 1: cout << "Veuillez saisir une tache que vous souhaitez supprimez"<<endl;
+                    cin >> tache3;
+                    supprimerTache(tache3);
+                    break;
+                case 2: cout << "Veuillez saisir une tache que vous souhaitez dupliquez "<<endl;
+                    cin >>tache3;
+                    dupliquerTache(tache3,10);
+                    break;
+                case 3:  cout << "Veuillez saisir une tache que vous souhaitez ajoutez dans la liste"<<endl;
+                    cin >>tache3;
+                    ajouterTache(tache3);
+                    break;
+                default: cout <<"resaisir un entier compris entre 1 et 3"<<endl;
+            }
+            break;
+        case 4 :
+            cout << "Autre options" << endl; // tache 5
+            break;
+        default :
+            cout << "resaisir un chiffre entre 1 et 4" << endl;
 
     }
+
+
+
 
    // enchainer_clic(10,3,10);
     /* =================================================================================
@@ -142,5 +234,4 @@ Sleep(9000);
     mouse_event(MOUSEEVENTF_LEFTUP, 0, 0, 0, 0); // double clic droit
     return 0;
 }
-
 
