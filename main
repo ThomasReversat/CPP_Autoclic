@@ -61,13 +61,11 @@ string ajouterTache(string t)
     tache.append(t);
     return t;
 }
-template<
-        class Rep, // nombre de ticks de type rep
-        class Period = std::ratio<1> //periode de ticks rationelles au moment de la compilation
-> class duration;
+
 
 
 int main() {
+
     int var0;
     int tache(0);
     cout <<"Bonjour"<<endl;
@@ -112,7 +110,7 @@ int main() {
         break;
         default : cout <<"saisir un chiffre entre 1 et 4"<<endl;
 
-        
+
 
 
     }
@@ -127,7 +125,10 @@ int main() {
    // SetCursorPos(0,0); // placer le curseur n'importe ou sur l'ecran
   //  Sleep(5000);
  //   clic_tache_duree_simple(10,10,"click options");
+    auto t_start = std::chrono::high_resolution_clock::now(); //definis un intervalle de temps
     mouse_event(MOUSEEVENTF_LEFTDOWN, 10, 100, 0, 0); //simulation double clic gauche
+    auto t_end = std::chrono::high_resolution_clock::now();
+    double elapsed_time_ms = std::chrono::duration<double, std::milli>(t_end-t_start).count();
 Sleep(9000);
     mouse_event(MOUSEEVENTF_LEFTUP, 0, 0, 0, 0); // double clic droit
     return 0;
