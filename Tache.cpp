@@ -27,6 +27,21 @@ string Tache::ajouterTache(string t)
 {
     /* ajouter une tache t dans une autre tache  */
     string tache=" ";
+  //  tache=t;
     tache.append(t);
     return t;
+}
+
+string Tache::renommerTache(string mot) {
+    /*renommer une tache t */
+    string tache = mot;
+    return tache;
+
+
+}
+
+void Tache::historiqueTaches(vector<string> tab, string tache, int i) {
+    /*insere une tache à la ieme position */
+
+    tab[i]=tache;
 }
