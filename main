@@ -5,6 +5,7 @@
 #include <string>
 #include "Cycle.hpp"
 #include "Tache.hpp"
+#define NOMBRE 10
 
 using namespace std;
 #define _WIN32_WINNT 0x0500
@@ -78,8 +79,10 @@ int main() {
     int var1;
     int var2;
     int var3;
+    int x,y;
     int tache(0);
-
+    string b1,b2;
+    auto t_start = std::chrono::high_resolution_clock::now();
     cout <<"Bonjour"<<endl;
     cout <<"Veuillez saisir un entier qui representera la liste des taches"<<endl;
     cout << " Cet entier doit etre compris entre 0 et 4"<<endl;
@@ -99,6 +102,21 @@ int main() {
                     cin >> tache0;
                     renommerTache(tache0);
                     cout << renommerTache("Click Interval") << endl;
+                    cout << "=================================================="<<endl;
+                    cout << "un intervall de temps sera defini entre l'interval des deux clics automatiquement"<<endl;
+                    cout << "Saisir les coordonnes du clics"<<endl;
+                    cin>>x>>y;
+                    clic_ici(x,y);
+                    Sleep(9000);
+                    cout << "Souhaitez vous enchainez les clics gauche et droit ?"<<endl;
+                    cout << "Saisir True pour effectuez la tache ou False pour continuez"<<endl;
+                    cin >> b1;
+                    if (b1 == "True")
+                    {
+                        enchainer_clic(x,y,NOMBRE);
+                    }
+                    // else on continue
+
                     break;
                 case 1 :
                     cout << "Saisir une tache que vous souhaitez supprimez" << endl;
@@ -218,7 +236,8 @@ int main() {
 
     }
 
-
+    auto t_end = std::chrono::high_resolution_clock::now();
+    double elapsed_time_ms = std::chrono::duration<double, std::milli>(t_end-t_start).count();
 
 
    // enchainer_clic(10,3,10);
@@ -231,14 +250,15 @@ int main() {
    // SetCursorPos(0,0); // placer le curseur n'importe ou sur l'ecran
   //  Sleep(5000);
  //   clic_tache_duree_simple(10,10,"click options");
-    auto t_start = std::chrono::high_resolution_clock::now(); //definis un intervalle de temps
+  //  auto t_start = std::chrono::high_resolution_clock::now(); //definis un intervalle de temps
     mouse_event(MOUSEEVENTF_LEFTDOWN, 10, 100, 0, 0); //simulation double clic gauche
-    auto t_end = std::chrono::high_resolution_clock::now();
-    double elapsed_time_ms = std::chrono::duration<double, std::milli>(t_end-t_start).count();
+  //  auto t_end = std::chrono::high_resolution_clock::now();
+  //  double elapsed_time_ms = std::chrono::duration<double, std::milli>(t_end-t_start).count();
 Sleep(9000);
     mouse_event(MOUSEEVENTF_LEFTUP, 0, 0, 0, 0); // double clic droit
     return 0;
 }
+
 
 
 
