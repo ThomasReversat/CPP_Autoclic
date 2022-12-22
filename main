@@ -4,6 +4,7 @@
 #include <windowsx.h>
 #include <string>
 #include "Cycle.hpp"
+#include "Tache.hpp"
 
 using namespace std;
 #define _WIN32_WINNT 0x0500
@@ -62,7 +63,11 @@ string ajouterTache(string t)
     return t;
 }
 
-
+void historiqueTaches(vector <string>tab,string tache,int i)
+{
+    /* affiche l'historique des taches dans un tableau de vector à la i eme position */
+    tab[i]=tache;
+}
 
 int main() {
     string tache0;
@@ -86,7 +91,7 @@ int main() {
             cout << "Souhaitez vous la supprimer ?" << endl;
             cout << "Souhaitez vous dupliquez la tache" << endl;
             cout << "Souhaitez vous ajoutez la tache" << endl;
-            cout << "Veuillez saisir un entier mais compris entre 1 et 4" << endl;
+            cout << "Veuillez saisir un entier mais compris entre 0 et 3" << endl;
             cin >> var0;
             switch (var0) {
                 case 0 :
@@ -234,4 +239,6 @@ Sleep(9000);
     mouse_event(MOUSEEVENTF_LEFTUP, 0, 0, 0, 0); // double clic droit
     return 0;
 }
+
+
 
