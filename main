@@ -106,6 +106,7 @@ int main() {
             cout << "Souhaitez vous la supprimer ?" << endl;
             cout << "Souhaitez vous dupliquez la tache" << endl;
             cout << "Souhaitez vous ajoutez la tache" << endl;
+            cout << "=================================================="<<endl;
             cout << "Veuillez saisir un entier mais compris entre 0 et 3" << endl;
             cin >> var0;
             switch (var0) {
@@ -139,7 +140,7 @@ int main() {
                     cout << "Saisir les coordonnes du clics"<<endl;
                     cin >>x>>y;
                     cout <<"Souhaitez vous enchainez des clics ?"<<endl;
-                    cout <<"Y/N";
+                    cout <<"Y/N"<<endl;
                     cin>>tache4;
                     cout <<"Veuillez choisir une duree"<<endl;
                     cin>>time;
@@ -151,11 +152,33 @@ int main() {
                     cin >> tache0;
                     dupliquerTache(tache0, 5);
                     cout << dupliquerTache(tache0, 5) << endl;
+                    cout << "=================================================="<<endl;
+                    cout << "un interval de temps est definit automatiquement"<<endl;
+                    cout << "Saisir les coordonnes du clics"<<endl;
+                    cin >>x>>y;
+                    cout <<"Souhaitez vous enchainez des clics ?"<<endl;
+                    cout <<"Y/N"<<endl;
+                    cin>>tache4;
+                    cout <<"Veuillez choisir une duree"<<endl;
+                    cin>>time;
+                    clic_duree(x,y,time,NOMBRE);
+                    Sleep(9000);
                     break;
                 case 3 :
                     cout << "saisir une tache que vous souhaitez ajoutez dans la liste" << endl;
                     cin >> tache0;
                     ajouterTache(tache0);
+                    cout <<"==================================================================":
+                    cout << "un interval de temps est definit automatiquement"<<endl;
+                    cout << "Saisir les coordonnes du clics"<<endl;
+                    cin >>x>>y;
+                    cout <<"Souhaitez vous enchainez des clics ?"<<endl;
+                    cout <<"Y/N"<<endl;
+                    cin>>tache4;
+                    cout <<"Veuillez choisir une duree"<<endl;
+                    cin>>time;
+                    clic_duree(x,y,time,NOMBRE);
+                    Sleep(9000);
                     break;
                 default:
                     cout << "resaisir un entier entre 0 et 3" << endl;
@@ -281,6 +304,4 @@ Sleep(9000);
     mouse_event(MOUSEEVENTF_LEFTUP, 0, 0, 0, 0); // double clic droit
     return 0;
 }
-
-
 
