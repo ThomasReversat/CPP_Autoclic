@@ -69,12 +69,22 @@ void historiqueTaches(vector <string>tab,string tache,int i)
     /* affiche l'historique des taches dans un tableau de vector à la i eme position */
     tab[i]=tache;
 }
+void clic_duree(int x,int y,float t,int nb)
+{
+    /* effectue un clic au position x et y de duree t un nombre de fois nb */
 
+    for(int i=0;i<nb;i++)
+    {
+        clic_ici(x,y);
+        Sleep(t); // une pause en milliseconde
+    }
+}
 int main() {
     string tache0;
     string tache1;
     string tache2;
     string tache3;
+    string tache4;
     int var0;
     int var1;
     int var2;
@@ -82,6 +92,7 @@ int main() {
     int x,y;
     int tache(0);
     string b1,b2;
+    float time;
     auto t_start = std::chrono::high_resolution_clock::now();
     cout <<"Bonjour"<<endl;
     cout <<"Veuillez saisir un entier qui representera la liste des taches"<<endl;
@@ -90,6 +101,7 @@ int main() {
     switch (tache) {
         case 0 :
             cout << "Click Interval" << endl; // tache 1
+            cout << "=================================================="<<endl;
             cout << "Souhaitez vous renommer la tache ?" << endl;
             cout << "Souhaitez vous la supprimer ?" << endl;
             cout << "Souhaitez vous dupliquez la tache" << endl;
@@ -103,7 +115,7 @@ int main() {
                     renommerTache(tache0);
                     cout << renommerTache("Click Interval") << endl;
                     cout << "=================================================="<<endl;
-                    cout << "un intervall de temps sera defini entre l'interval des deux clics automatiquement"<<endl;
+                    cout << "un interval de temps sera definie entre l'interval des deux clics automatiquement"<<endl;
                     cout << "Saisir les coordonnes du clics"<<endl;
                     cin>>x>>y;
                     clic_ici(x,y);
@@ -122,6 +134,17 @@ int main() {
                     cout << "Saisir une tache que vous souhaitez supprimez" << endl;
                     cin >> tache0;
                     supprimerTache(tache0);
+                    cout << "========================================================"<<endl;
+                    cout << "un interval de temps est definit automatiquement"<<endl;
+                    cout << "Saisir les coordonnes du clics"<<endl;
+                    cin >>x>>y;
+                    cout <<"Souhaitez vous enchainez des clics ?"<<endl;
+                    cout <<"Y/N";
+                    cin>>tache4;
+                    cout <<"Veuillez choisir une duree"<<endl;
+                    cin>>time;
+                    clic_duree(x,y,time,NOMBRE);
+                    Sleep(9000);
                     break;
                 case 2 :
                     cout << "Saisir une tache que vous souhaitez dupliquez" << endl;
@@ -258,7 +281,6 @@ Sleep(9000);
     mouse_event(MOUSEEVENTF_LEFTUP, 0, 0, 0, 0); // double clic droit
     return 0;
 }
-
 
 
 
