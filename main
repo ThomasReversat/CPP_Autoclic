@@ -1,5 +1,6 @@
 #include <iostream>
 #include <chrono>
+#include <ctime>
 #include <windows.h> // SDK windows
 #include <windowsx.h>
 #include <string>
@@ -81,6 +82,7 @@ void clic_duree(int x,int y,float t,int nb)
     }
 }
 int main() {
+    clock_t temps_initial = clock();
     string tache0;
     string tache1;
     string tache2;
@@ -93,7 +95,7 @@ int main() {
     int x,y;
     int val;
     int tache(0);
-    string b1,b2;
+    int b1,b2;
     float time;
     auto t_start = std::chrono::high_resolution_clock::now();
     cout <<"Bonjour"<<endl;
@@ -123,10 +125,11 @@ int main() {
                     cin>>x>>y;
                     clic_ici(x,y);
                     Sleep(9000);
+                    
                     cout << "Souhaitez vous enchainez les clics gauche et droit ?"<<endl;
-                    cout << "Saisir True pour effectuez la tache ou False pour continuez"<<endl;
+                    cout << "Saisir True pour effectuez la tache ou False pour continuez ou bien les chiffres 1 et 0"<<endl;
                     cin >> b1;
-                    if (b1 == "True")
+                    if (b1 == 1)
                     {
                         enchainer_clic(x,y,NOMBRE);
                     }
@@ -407,7 +410,7 @@ int main() {
                 mouse_event(MOUSEEVENTF_RIGHTDOWN, 10, 100, 0, 0);
             }
             cout <<"*========================================================*"<<endl;
-            
+
             break;
         default :
             cout << "resaisir un chiffre entre 1 et 4" << endl;
@@ -416,7 +419,10 @@ int main() {
 
     auto t_end = std::chrono::high_resolution_clock::now();
     double elapsed_time_ms = std::chrono::duration<double, std::milli>(t_end-t_start).count();
-
+    clock_t temps_final = clock();
+    clock_t temps_cpu = (temps_final - temps_initial) / CLOCKS_PER_SEC * 1000; // millisecondes
+    cout <<temps_cpu<<endl;
+    cout <<"ms"<<endl;
 
    // enchainer_clic(10,3,10);
     /* =================================================================================
