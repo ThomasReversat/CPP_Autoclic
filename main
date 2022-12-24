@@ -118,14 +118,14 @@ int main() {
                     cout << "Veuillez saisir le nom d'une tache " << endl;
                     cin >> tache0;
                     renommerTache(tache0);
-                    cout << renommerTache("Click Interval") << endl;
+                    cout << renommerTache(tache0) << endl;
                     cout << "=================================================="<<endl;
                     cout << "un interval de temps sera definie entre l'interval des deux clics automatiquement"<<endl;
                     cout << "Saisir les coordonnes du clics"<<endl;
+                    Sleep(5000);
                     cin>>x>>y;
                     clic_ici(x,y);
                     Sleep(9000);
-                    
                     cout << "Souhaitez vous enchainez les clics gauche et droit ?"<<endl;
                     cout << "Saisir True pour effectuez la tache ou False pour continuez ou bien les chiffres 1 et 0"<<endl;
                     cin >> b1;
