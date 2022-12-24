@@ -91,6 +91,7 @@ int main() {
     int var2;
     int var3;
     int x,y;
+    int val;
     int tache(0);
     string b1,b2;
     float time;
@@ -391,6 +392,22 @@ int main() {
             break;
         case 4 :
             cout << "Autre options" << endl; // tache 5
+            cout << "Souhaitez vous simulez un double clic gauche ou bien un double clic droit ?"<<endl;
+            cout <<"*========================================================*"<<endl;
+            cout<<"1 - Vous choississez le double clic gauche"<<endl;
+            cout<<"2 - Vous choississez le double clic droit"<<endl;
+            cin >> val;
+            if (val == 1)
+            {
+                mouse_event(MOUSEEVENTF_LEFTDOWN, 10, 100, 0, 0);
+                Sleep(9000);
+            }
+            else
+            {
+                mouse_event(MOUSEEVENTF_RIGHTDOWN, 10, 100, 0, 0);
+            }
+            cout <<"*========================================================*"<<endl;
+            
             break;
         default :
             cout << "resaisir un chiffre entre 1 et 4" << endl;
