@@ -97,6 +97,7 @@ int main() {
     int tache(0);
     int b1,b2;
     float time;
+    vector <string>tab; //tableau d'historique des taches
     auto t_start = std::chrono::high_resolution_clock::now();
     cout <<"Bonjour"<<endl;
     cout <<"Veuillez saisir un entier qui representera la liste des taches"<<endl;
@@ -106,10 +107,10 @@ int main() {
         case 0 :
             cout << "Click Interval" << endl; // tache 1
             cout << "=================================================="<<endl;
-            cout << "Souhaitez vous renommer la tache ?" << endl;
-            cout << "Souhaitez vous la supprimer ?" << endl;
-            cout << "Souhaitez vous dupliquez la tache" << endl;
-            cout << "Souhaitez vous ajoutez la tache" << endl;
+            cout << " 0- Souhaitez vous renommer la tache ?" << endl;
+            cout << " 1 - Souhaitez vous la supprimer ?" << endl;
+            cout << " 2 - Souhaitez vous dupliquez la tache" << endl;
+            cout << " 3 - Souhaitez vous ajoutez la tache" << endl;
             cout << "=================================================="<<endl;
             cout << "Veuillez saisir un entier mais compris entre 0 et 3" << endl;
             cin >> var0;
@@ -124,6 +125,7 @@ int main() {
                     cout << "Saisir les coordonnes du clics"<<endl;
                     Sleep(5000);
                     cin>>x>>y;
+                    cout <<"les coordonnes du clics sont ("<<x<<","<<y<<")"<<endl;
                     clic_ici(x,y);
                     Sleep(9000);
                     cout << "Souhaitez vous enchainez les clics gauche et droit ?"<<endl;
@@ -134,7 +136,8 @@ int main() {
                         enchainer_clic(x,y,NOMBRE);
                     }
                     // else on continue
-
+                    historiqueTaches(tab,"Click Interval",0); // position 0
+                    
                     break;
                 case 1 :
                     cout << "Saisir une tache que vous souhaitez supprimez" << endl;
@@ -421,8 +424,8 @@ int main() {
     double elapsed_time_ms = std::chrono::duration<double, std::milli>(t_end-t_start).count();
     clock_t temps_final = clock();
     clock_t temps_cpu = (temps_final - temps_initial) / CLOCKS_PER_SEC * 1000; // millisecondes
-    cout <<temps_cpu<<endl;
-    cout <<"ms"<<endl;
+    cout <<temps_cpu<<"ms"<<endl;
+
 
    // enchainer_clic(10,3,10);
     /* =================================================================================
