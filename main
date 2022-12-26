@@ -117,7 +117,9 @@ int main() {
             switch (var0) {
                 case 0 :
                     cout << "Veuillez saisir le nom d'une tache " << endl;
+
                     cin >> tache0;
+                    cin.ignore();
                     renommerTache(tache0);
                     cout << renommerTache(tache0) << endl;
                     cout << "=================================================="<<endl;
@@ -344,8 +346,10 @@ int main() {
                 cin >>tache2;
                     renommerTache(tache2);
                     cout <<renommerTache(tache2);
+                    
                     cout <<"*========================================================*"<<endl;
                     enchainer_clic(x,y,NOMBRE);
+                    cout <<"*========================================================*"<<endl;
                     Sleep(9000);
                     break;
 
@@ -452,6 +456,17 @@ int main() {
   //  double elapsed_time_ms = std::chrono::duration<double, std::milli>(t_end-t_start).count();
 Sleep(9000);
     mouse_event(MOUSEEVENTF_LEFTUP, 0, 0, 0, 0); // double clic droit
+    string const nomFichier("C:\\Users\\bilel\\Desktop\\CPP/renommerTache.txt");
+    ofstream monFlux(nomFichier.c_str());
+    if(monFlux)
+    {
+        monFlux<< "Veuillez renommez votre tache"<<endl;
+        monFlux<< "clic a duree"<<endl;
+    }
+    else{
+        cout << "ERREUR: Impossible d'ouvrir le fichier." << endl;
+    }
+
     return 0;
 }
 
