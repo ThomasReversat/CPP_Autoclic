@@ -136,8 +136,8 @@ int main() {
                         enchainer_clic(x,y,NOMBRE);
                     }
                     // else on continue
-                    historiqueTaches(tab,"Click Interval",0); // position 0
-                    
+                    historiqueTaches(tab,"renommer Tache",0); // position 0
+
                     break;
                 case 1 :
                     cout << "Saisir une tache que vous souhaitez supprimez" << endl;
@@ -147,13 +147,16 @@ int main() {
                     cout << "un interval de temps est definit automatiquement"<<endl;
                     cout << "Saisir les coordonnes du clics"<<endl;
                     cin >>x>>y;
+                    cout <<"("<<x<<","<<y<<")"<<;
                     cout <<"Souhaitez vous enchainez des clics ?"<<endl;
                     cout <<"Y/N"<<endl;
                     cin>>tache4;
                     cout <<"Veuillez choisir une duree"<<endl;
                     cin>>time;
+                    cout<<time<<endl;
                     clic_duree(x,y,time,NOMBRE);
                     Sleep(9000);
+                    historiqueTaches(tab,"supprimez tache",1);
                     break;
                 case 2 :
                     cout << "Saisir une tache que vous souhaitez dupliquez" << endl;
