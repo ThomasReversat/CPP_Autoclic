@@ -45,3 +45,19 @@ void Tache::historiqueTaches(vector<string> tab, string tache, int i) {
 
     tab[i]=tache;
 }
+
+void Tache::renommer_tache(const string nomFichier)
+{
+    /* renomme une tache dans un fichier */
+    ofstream monFlux(nomFichier.c_str()); // declaration d'un flux permettant d'ecrire dans un fichier
+
+    if(monFlux) // on verifie si tout est OK
+    {
+        monFlux<<"Veuillez saisir la tache a renommer"<<endl;
+        monFlux<<"La tache a renommer sera : Clic enchaines"<<endl;
+    }
+    else
+    {
+        cout << "ERREUR: Impossible d'ouvrir le fichier." << endl;
+    }
+  //  monFlux.close();
