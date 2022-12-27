@@ -81,6 +81,22 @@ void clic_duree(int x,int y,float t,int nb)
         Sleep(t); // une pause en milliseconde
     }
 }
+void renommer_tache(const string nomFichier)
+{
+    /* renomme une tache dans un fichier */
+    ofstream monFlux(nomFichier.c_str()); // declaration d'un flux permettant d'ecrire dans un fichier
+
+    if(monFlux) // on verifie si tout est OK
+    {
+        monFlux<<"Veuillez saisir la tache a renommer"<<endl;
+        monFlux<<"La tache a renommer sera : Clic enchaines"<<endl;
+    }
+    else
+    {
+        cout << "ERREUR: Impossible d'ouvrir le fichier." << endl;
+    }
+    //  monFlux.close();
+}
 int main() {
     clock_t temps_initial = clock();
     string tache0;
@@ -466,7 +482,7 @@ Sleep(9000);
     else{
         cout << "ERREUR: Impossible d'ouvrir le fichier." << endl;
     }
-
+    renommer_tache("C:\\Users\\bilel\\Desktop\\CPP/renommer.txt");
     return 0;
 }
 
