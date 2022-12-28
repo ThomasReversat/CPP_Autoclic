@@ -179,8 +179,7 @@ int main() {
                     cout << "le programme effectue la tache au coordonnes" << x << y << endl;
                     Sleep(9000);
                     cout << "Souhaitez vous enchainez les clics gauche et droit ?" << endl;
-                    cout << "Saisir True pour effectuez la tache ou False pour continuez ou bien les chiffres 1 et 0"
-                         << endl;
+                    cout << "Saisir True pour effectuez la tache ou False pour continuez ou bien les chiffres 1 et 0"<< endl;
                     cin >> b1;
                     if (b1 == 1) {
                         enchainer_clic(x, y, NOMBRE);
@@ -228,7 +227,7 @@ int main() {
                     cin >> time;
                     cout << time << endl;
                     clic_duree(x, y, time, NOMBRE);
-                    cout << "le programme effectue la tache au coordonnes" << x << y << endl;
+                    cout << "le programme effectue la tache au coordonnes" << x<<" "<<y<<endl;
                     Sleep(9000);
                     historiqueTaches(tab, "dupliquez tache", 2);
                     break;
@@ -254,49 +253,164 @@ int main() {
                     break;
 
 
-                    auto t_end = std::chrono::high_resolution_clock::now();
-                    double elapsed_time_ms = std::chrono::duration<double, std::milli>(t_end - t_start).count();
-                    clock_t temps_final = clock();
-                    clock_t temps_cpu = (temps_final - temps_initial) / CLOCKS_PER_SEC * 1000; // millisecondes
-                    cout << temps_cpu << "ms" << endl;
-
-
-                    // enchainer_clic(10,3,10);
-                    /* =================================================================================
-                     *
-                     *
-                     *
-                     */
-
-                    // SetCursorPos(0,0); // placer le curseur n'importe ou sur l'ecran
-                    //  Sleep(5000);
-                    //   clic_tache_duree_simple(10,10,"click options");
-                    //  auto t_start = std::chrono::high_resolution_clock::now(); //definis un intervalle de temps
-                    //   mouse_event(MOUSEEVENTF_LEFTDOWN, 10, 100, 0, 0); //simulation double clic gauche
-                    //  auto t_end = std::chrono::high_resolution_clock::now();
-                    //  double elapsed_time_ms = std::chrono::duration<double, std::milli>(t_end-t_start).count();
-                    /*     Sleep(9000);
-                         mouse_event(MOUSEEVENTF_LEFTUP, 0, 0, 0, 0); // double clic droit
-                         string const nomFichier("C:\\Users\\bilel\\Desktop\\CPP/renommerTache.txt");
-                         ofstream monFlux(nomFichier.c_str());
-                         if (monFlux) {
-                             monFlux << "Veuillez renommez votre tache" << endl;
-                             monFlux << "clic a duree" << endl;
-                         } else {
-                             cout << "ERREUR: Impossible d'ouvrir le fichier." << endl;
-                         }*/
-                    //  renommer_tache("C:\\Users\\bilel\\Desktop\\CPP/renommer.txt");
-                    //renommer_tache_lire("C:\\Users\\bilel\\Desktop\\CPP/renommer.txt");
-                    /* while(true) {
-
-
-                         if (GetAsyncKeyState(VK_LBUTTON) & 0x8000) {
-                             std::cout << "Left mouse button clicked!" << std::endl;
-                         }
-                     }
-                     */
-                    return 0;
 
             }
+        case 1:
+            cout << "Clic Repetition" << endl; //tache 2
+            cout << "==================================================" << endl;
+            cout << " 0- Souhaitez vous renommer la tache ?" << endl;
+            cout << " 1 - Souhaitez vous la supprimer ?" << endl;
+            cout << " 2 - Souhaitez vous dupliquez la tache" << endl;
+            cout << " 3 - Souhaitez vous ajoutez la tache" << endl;
+            cout << "==================================================" << endl;
+            cout << "Veuillez saisir un entier mais compris entre 0 et 3" << endl;
+            int a;
+            cin >> a;
+            if (a == 0) {
+                cout << "un temps d'execution est lance automatiquement" << endl;
+                renommerTache("enchainement clics");
+                cout << renommerTache("enchainement clics") << endl;
+                cout << "vous allez enchainez les clics aux coordonnes 15, 3" << endl;
+                enchainer_clic(15, 3, NOMBRE);
+                Sleep(9000);
+
+            }
+            if (a == 1) {
+                cout << "un temps d'execution est lance automatiquement" << endl;
+                supprimerTache("enchainement clics");
+                cout << renommerTache("enchainement clics") << endl;
+                cout << "vous allez enchainez les clics aux coordonnes 15, 3" << endl;
+                enchainer_clic(15, 3, NOMBRE);
+                Sleep(9000);
+            }
+            if (a == 2) {
+                cout << "un temps d'execution est lance automatiquement" << endl;
+                dupliquerTache("enchainement clics", 4);
+                cout << dupliquerTache("enchainement clics", 4) << endl;
+                cout << "vous allez enchainez les clics aux coordonnes 15, 3" << endl;
+                enchainer_clic(15, 3, NOMBRE);
+                Sleep(9000);
+            }
+            if (a == 3) {
+                cout << "un temps d'execution est lance automatiquement" << endl;
+                ajouterTache("enchainement clics");
+                cout << ajouterTache("enchainement clics") << endl;
+                cout << "vous allez enchainez les clics aux coordonnes 15, 3" << endl;
+                enchainer_clic(15, 3, NOMBRE);
+                Sleep(9000);
+            }
+            break;
+
+        case 2:
+            cout << "Cursor Position" << endl;
+            cout << "==================================================" << endl;
+            cout << " 0- Souhaitez vous renommer la tache ?" << endl;
+            cout << " 1 - Souhaitez vous la supprimer ?" << endl;
+            cout << " 2 - Souhaitez vous dupliquez la tache" << endl;
+            cout << " 3 - Souhaitez vous ajoutez la tache" << endl;
+            cout << "==================================================" << endl;
+            cout << "Veuillez saisir un entier mais compris entre 0 et 3" << endl;
+            int b;
+            cin >> b;
+            if (a == 0) {
+                renommerTache("curseur position");
+                cout << renommerTache("curseur position") << endl;
+                SetCursorPos(15, 2);
+                cout <<"programme en cours ; le curseur se deplace aux position (15,2)"<<endl;
+            }
+            if (a== 1)
+            {
+                supprimerTache("curseur position");
+                //cout <<supprimerTache("curseur position")<<endl;
+                SetCursorPos(16,3);
+                cout <<"programme en cours ; le curseur se deplace aux position (15,2)"<<endl;
+            }
+            if (a == 2)
+            {
+                dupliquerTache("curseur position tache",5);
+                cout<<dupliquerTache("curseur position tache",5);
+                SetCursorPos(16,3);
+                cout <<"programme en cours ; le curseur se deplace aux position (15,2)"<<endl;
+            }
+            if(a==3)
+            {
+                ajouterTache("curseur tache");
+                SetCursorPos(17,5);
+                cout <<"programme en cours ; le curseur se deplace aux position (15,2)"<<endl;
+            }
+            break;
+
+        case 3 : cout << "Cursor Options"<<endl;
+            cout << "==================================================" << endl;
+            cout << " 0- Souhaitez vous renommer la tache ?" << endl;
+            cout << " 1 - Souhaitez vous la supprimer ?" << endl;
+            cout << " 2 - Souhaitez vous dupliquez la tache" << endl;
+            cout << " 3 - Souhaitez vous ajoutez la tache" << endl;
+            cout << "==================================================" << endl;
+            cout << "Veuillez saisir un entier mais compris entre 0 et 3" << endl;
+            int d;
+            cin >> d;
+            if (d == 0)
+            {
+                renommerTache("clic Options");
+                cout <<renommerTache("clic options")<<endl;
+                for(int i= 0;i<3;i++)
+                {
+                    if (GetAsyncKeyState('A') & 0x8000)
+                    {
+                        INPUT input;
+                        input.type = INPUT_MOUSE;
+                        input.mi.dwFlags = MOUSEEVENTF_LEFTDOWN;
+                        SendInput(1, &input, sizeof(INPUT));
+
+                        input.mi.dwFlags = MOUSEEVENTF_LEFTUP;
+                        SendInput(1, &input, sizeof(INPUT));
+                    }
+                    if (d == 1)
+                    {
+                        supprimerTache("clic options");
+                        if (GetAsyncKeyState('A') & 0x8000)
+                        {
+                            INPUT input;
+                            input.type = INPUT_MOUSE;
+                            input.mi.dwFlags = MOUSEEVENTF_LEFTDOWN;
+                            SendInput(1, &input, sizeof(INPUT));
+
+                            input.mi.dwFlags = MOUSEEVENTF_LEFTUP;
+                            SendInput(1, &input, sizeof(INPUT));
+                        }
+                    }
+                    if(d==2){
+                        dupliquerTache("clic options",8);
+                        cout<<dupliquerTache("clic options",8);
+                        if (GetAsyncKeyState('A') & 0x8000)
+                        {
+                            INPUT input;
+                            input.type = INPUT_MOUSE;
+                            input.mi.dwFlags = MOUSEEVENTF_LEFTDOWN;
+                            SendInput(1, &input, sizeof(INPUT));
+
+                            input.mi.dwFlags = MOUSEEVENTF_LEFTUP;
+                            SendInput(1, &input, sizeof(INPUT));
+                        }
+                    }
+                    if (d==3)
+                    {
+                        ajouterTache("clic options");
+                        if (GetAsyncKeyState('A') & 0x8000)
+                        {
+                            INPUT input;
+                            input.type = INPUT_MOUSE;
+                            input.mi.dwFlags = MOUSEEVENTF_LEFTDOWN;
+                            SendInput(1, &input, sizeof(INPUT));
+
+                            input.mi.dwFlags = MOUSEEVENTF_LEFTUP;
+                            SendInput(1, &input, sizeof(INPUT));
+                        }
+                    }
+                }
+            }
+
+
     }
 }
