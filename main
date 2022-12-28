@@ -97,6 +97,31 @@ void renommer_tache(const string nomFichier)
     }
     //  monFlux.close();
 }
+void renommer_tache_lire(const string nomFichier)
+{
+    /* recupere le texte ecrit par l'utilisateur dans un fichier */
+
+    ifstream fichier("C:\\Users\\bilel\\Desktop\\CPP/lecture_renommage_fichier");
+
+    if(fichier)
+    {
+        //L'ouverture s'est bien passée, on peut donc lire
+
+        string ligne; //Une variable pour stocker les lignes lues
+
+        while(getline(fichier, ligne)) //Tant qu'on n'est pas à la fin, on lit
+        {
+            cout << ligne << endl;
+            //Et on l'affiche dans la console
+            //Ou alors on fait quelque chose avec cette ligne
+            //À vous de voir
+        }
+    }
+    else
+    {
+        cout << "ERREUR: Impossible d'ouvrir le fichier en lecture." << endl;
+    }
+}
 int main() {
     clock_t temps_initial = clock();
     string tache0;
@@ -104,30 +129,36 @@ int main() {
     string tache2;
     string tache3;
     string tache4;
+    string tache5;
+    string tache6;
+    string tache14;
+    string tache7;
+    string tache8, tache9, tache10, tache11, tache12, tache13, tache15, tache16, tache17;
     int var0;
     int var1;
     int var2;
     int var3;
-    int x,y;
+    int x, y;
     int val;
     int tache(0);
-    int b1,b2;
+    int b1, b2;
     float time;
-    vector <string>tab; //tableau d'historique des taches
+    vector<string> tab; //tableau d'historique des taches
     auto t_start = std::chrono::high_resolution_clock::now();
-    cout <<"Bonjour"<<endl;
-    cout <<"Veuillez saisir un entier qui representera la liste des taches"<<endl;
-    cout << " Cet entier doit etre compris entre 0 et 4"<<endl;
+    cout << "Bonjour" << endl;
+    cout << "Veuillez saisir un entier qui representera la liste des taches" << endl;
+    cout << "Cet entier doit etre compris entre 0 et 4" << endl;
     cin >> tache;
     switch (tache) {
         case 0 :
+
             cout << "Click Interval" << endl; // tache 1
-            cout << "=================================================="<<endl;
+            cout << "==================================================" << endl;
             cout << " 0- Souhaitez vous renommer la tache ?" << endl;
             cout << " 1 - Souhaitez vous la supprimer ?" << endl;
             cout << " 2 - Souhaitez vous dupliquez la tache" << endl;
             cout << " 3 - Souhaitez vous ajoutez la tache" << endl;
-            cout << "=================================================="<<endl;
+            cout << "==================================================" << endl;
             cout << "Veuillez saisir un entier mais compris entre 0 et 3" << endl;
             cin >> var0;
             switch (var0) {
@@ -135,354 +166,137 @@ int main() {
                     cout << "Veuillez saisir le nom d'une tache " << endl;
 
                     cin >> tache0;
-                    cin.ignore();
+                    // cin.ignore();
                     renommerTache(tache0);
                     cout << renommerTache(tache0) << endl;
-                    cout << "=================================================="<<endl;
-                    cout << "un interval de temps sera definie entre l'interval des deux clics automatiquement"<<endl;
-                    cout << "Saisir les coordonnes du clics"<<endl;
+                    cout << "==================================================" << endl;
+                    cout << "un interval de temps sera definie entre l'interval des deux clics automatiquement" << endl;
+                    cout << "Saisir les coordonnes du clics" << endl;
                     Sleep(5000);
-                    cin>>x>>y;
-                    cout <<"les coordonnes du clics sont ("<<x<<","<<y<<")"<<endl;
-                    clic_ici(x,y);
+                    cin >> x >> y;
+                    cout << "les coordonnes du clics sont (" << x << "," << y << ")" << endl;
+                    clic_ici(x, y);
+                    cout << "le programme effectue la tache au coordonnes" << x << y << endl;
                     Sleep(9000);
-                    cout << "Souhaitez vous enchainez les clics gauche et droit ?"<<endl;
-                    cout << "Saisir True pour effectuez la tache ou False pour continuez ou bien les chiffres 1 et 0"<<endl;
+                    cout << "Souhaitez vous enchainez les clics gauche et droit ?" << endl;
+                    cout << "Saisir True pour effectuez la tache ou False pour continuez ou bien les chiffres 1 et 0"
+                         << endl;
                     cin >> b1;
-                    if (b1 == 1)
-                    {
-                        enchainer_clic(x,y,NOMBRE);
+                    if (b1 == 1) {
+                        enchainer_clic(x, y, NOMBRE);
                     }
                     // else on continue
-                    historiqueTaches(tab,"renommer Tache",0); // position 0
+
+
+                    historiqueTaches(tab, "renommer Tache", 0); // position 0
 
                     break;
-                case 1 :
+                case 1:
                     cout << "Saisir une tache que vous souhaitez supprimez" << endl;
-                    cin >> tache0;
-                    supprimerTache(tache0);
-                    cout << "========================================================"<<endl;
-                    cout << "un interval de temps est definit automatiquement"<<endl;
-                    cout << "Saisir les coordonnes du clics"<<endl;
-                    cin >>x>>y;
-                    cout <<"("<<x<<","<<y<<")"<<endl;
-                    cout <<"Souhaitez vous enchainez des clics ?"<<endl;
-                    cout <<"Y/N"<<endl;
-                    cin>>tache4;
-                    cout <<"Veuillez choisir une duree"<<endl;
-                    cin>>time;
-                    cout<<time<<endl;
-                    clic_duree(x,y,time,NOMBRE);
+                    cin >> tache1;
+                    supprimerTache(tache1);
+                    cout << "========================================================" << endl;
+                    cout << "un interval de temps est definit automatiquement" << endl;
+                    cout << "Saisir les coordonnes du clics" << endl;
+                    cin >> x >> y;
+                    cout << "(" << x << "," << y << ")" << endl;
+                    cout << "Souhaitez vous enchainez des clics ?" << endl;
+                    cout << "Y/N" << endl;
+                    cin >> tache2;
+                    cout << "Veuillez choisir une duree" << endl;
+                    cin >> time;
+                    cout << time << endl;
+                    clic_duree(x, y, time, NOMBRE);
+                    cout << "le programme effectue la tache au coordonnes" << x << y << endl;
                     Sleep(9000);
-                    historiqueTaches(tab,"supprimez tache",1);
+                    historiqueTaches(tab, "supprimez tache", 1);
                     break;
                 case 2 :
                     cout << "Saisir une tache que vous souhaitez dupliquez" << endl;
-                    cin >> tache0;
-                    dupliquerTache(tache0, 5);
-                    cout << dupliquerTache(tache0, 5) << endl;
-                    cout << "=================================================="<<endl;
-                    cout << "un interval de temps est definit automatiquement"<<endl;
-                    cout << "Saisir les coordonnes du clics"<<endl;
-                    cin >>x>>y;
-                    cout <<"("<<x<<","<<y<<")"<<endl;
-                    cout <<"Souhaitez vous enchainez des clics ?"<<endl;
-                    cout <<"Y/N"<<endl;
-                    cin>>tache4;
-                    cout <<"Veuillez choisir une duree"<<endl;
-                    cin>>time;
-                    cout <<time<<endl;
-                    clic_duree(x,y,time,NOMBRE);
+                    cin >> tache3;
+                    dupliquerTache(tache3, 5);
+                    cout << dupliquerTache(tache3, 5) << endl;
+                    cout << "==================================================" << endl;
+                    cout << "un interval de temps est definit automatiquement" << endl;
+                    cout << "Saisir les coordonnes du clics" << endl;
+                    cin >> x >> y;
+                    cout << "(" << x << "," << y << ")" << endl;
+                    cout << "Souhaitez vous enchainez des clics ?" << endl;
+                    cout << "Y/N" << endl;
+                    cin >> tache4;
+                    cout << "Veuillez choisir une duree" << endl;
+                    cin >> time;
+                    cout << time << endl;
+                    clic_duree(x, y, time, NOMBRE);
+                    cout << "le programme effectue la tache au coordonnes" << x << y << endl;
                     Sleep(9000);
-                    historiqueTaches(tab,"dupliquez tache",2);
+                    historiqueTaches(tab, "dupliquez tache", 2);
                     break;
                 case 3 :
                     cout << "saisir une tache que vous souhaitez ajoutez dans la liste" << endl;
-                    cin >> tache0;
-                    ajouterTache(tache0);
-                    cout <<"==================================================================";
-                    cout << "un interval de temps est definit automatiquement"<<endl;
-                    cout << "Saisir les coordonnes du clics"<<endl;
-                    cin >>x>>y;
-                    cout <<"("<<x<<","<<y<<")"<<endl;
-                    cout <<"Souhaitez vous enchainez des clics ?"<<endl;
-                    cout <<"Y/N"<<endl;
-                    cin>>tache4;
-                    cout <<"Veuillez choisir une duree"<<endl;
-                    cin>>time;
-                    cout <<time<<endl;
-                    clic_duree(x,y,time,NOMBRE);
+                    cin >> tache5;
+                    ajouterTache(tache5);
+                    cout << "==================================================================";
+                    cout << "un interval de temps est definit automatiquement" << endl;
+                    cout << "Saisir les coordonnes du clics" << endl;
+                    cin >> x >> y;
+                    cout << "(" << x << "," << y << ")" << endl;
+                    cout << "Souhaitez vous enchainez des clics ?" << endl;
+                    cout << "Y/N" << endl;
+                    cin >> tache6;
+                    cout << "Veuillez choisir une duree" << endl;
+                    cin >> time;
+                    cout << time << endl;
+                    clic_duree(x, y, time, NOMBRE);
+                    cout << "le programme effectue la tache au coordonnes" << x << y << endl;
                     Sleep(9000);
-                    historiqueTaches(tab,"ajouter une tache",3);
-                    break;
-                default:
-                    cout << "resaisir un entier entre 0 et 3" << endl;
-            }
-            break;
-
-        case 1:
-            cout << "Click Options" << endl; // tache 2
-            cout << "Souhaitez vous renommer la tache ?" << endl;
-            cout << "Souhaitez vous la supprimer ?" << endl;
-            cout << "Souhaitez vous dupliquez la tache" << endl;
-            cout << "Souhaitez vous ajoutez la tache" << endl;
-            cout << "Veuillez saisir un entier mais compris entre 0 et 4" << endl;
-            switch(var1)
-            {
-                case 0 : cout << "Veuillez saisir le nom d'une tache"<<endl;
-                int n;
-                cin >> tache1;
-                renommerTache(tache1);
-                cout << renommerTache(tache1);
-                cout <<"==========================================================="<<endl;
-                cout <<"Choisir votre type de click"<<endl;
-                cout <<"1 - clic simple "<<endl;
-                cout <<"2 - enchainer les clics"<<endl;
-                cout << "3 - clic duree"<<endl;
-                cout <<"4- clic a tache duree simple"<<endl;
-                cin >>n;
-                if (n == 1)
-                {
-                    clic_ici(x,y);
-                }
-                else if (n == 2)
-                {
-                    enchainer_clic(x,y,NOMBRE);
-                }
-                else if(n==3)
-                {
-                    clic_tache_duree_simple(x,y,"CLIC OPTIONS");
-                }
-                else
-                {
-                    clic_duree(x,y,time,NOMBRE);
-                }
-                break;
-
-                case 1 : cout << "Veuillez saisir une tache que vous souhaitez supprimez"<<endl;
-                cin >>tache1;
-                supprimerTache(tache1);
-                    cout <<"==========================================================="<<endl;
-                    cout <<"Choisir votre type de click"<<endl;
-                    cout <<"1 - clic simple "<<endl;
-                    cout <<"2 - enchainer les clics"<<endl;
-                    cout << "3 - clic duree"<<endl;
-                    cout <<"4- clic a tache duree simple"<<endl;
-                    cin >>n;
-                    if (n == 1)
-                    {
-                        clic_ici(x,y);
-                    }
-                    else if (n == 2)
-                    {
-                        enchainer_clic(x,y,NOMBRE);
-                    }
-                    else if(n==3)
-                    {
-                        clic_tache_duree_simple(x,y,"CLIC OPTIONS");
-                    }
-                    else
-                    {
-                        clic_duree(x,y,time,NOMBRE);
-                    }
-                break;
-
-                case 2 : cout << "Veuillez saisir une tache que vous souhaitez dupliquez"<<endl;
-                cin >>tache1;
-                    dupliquerTache(tache1,5);
-                    cout <<"==========================================================="<<endl;
-                    cout <<"Choisir votre type de click"<<endl;
-                    cout <<"1 - clic simple "<<endl;
-                    cout <<"2 - enchainer les clics"<<endl;
-                    cout << "3 - clic duree"<<endl;
-                    cout <<"4- clic a tache duree simple"<<endl;
-                    cin >>n;
-                    if (n == 1)
-                    {
-                        clic_ici(x,y);
-                    }
-                    else if (n == 2)
-                    {
-                        enchainer_clic(x,y,NOMBRE);
-                    }
-                    else if(n==3)
-                    {
-                        clic_tache_duree_simple(x,y,"CLIC OPTIONS");
-                    }
-                    else
-                    {
-                        clic_duree(x,y,time,NOMBRE);
-                    }
+                    historiqueTaches(tab, "ajouter une tache", 3);
                     break;
 
-                case 3 : cout <<"veuillez saisir une tache que vous souhaitez ajoutez dans la liste"<<endl;
-                cin >>tache1;
-                    ajouterTache(tache1);
-                    cout <<"==========================================================="<<endl;
-                    cout <<"Choisir votre type de click"<<endl;
-                    cout <<"1 - clic simple "<<endl;
-                    cout <<"2 - enchainer les clics"<<endl;
-                    cout << "3 - clic duree"<<endl;
-                    cout <<"4- clic a tache duree simple"<<endl;
-                    cin >>n;
-                    if (n == 1)
-                    {
-                        clic_ici(x,y);
-                    }
-                    else if (n == 2)
-                    {
-                        enchainer_clic(x,y,NOMBRE);
-                    }
-                    else if(n==3)
-                    {
-                        clic_tache_duree_simple(x,y,"CLIC OPTIONS");
-                    }
-                    else
-                    {
-                        clic_duree(x,y,time,NOMBRE);
-                    }
-                    break;
 
-                default : cout <<"resaisir un entier compris entre 1 et 3"<<endl;
+                    auto t_end = std::chrono::high_resolution_clock::now();
+                    double elapsed_time_ms = std::chrono::duration<double, std::milli>(t_end - t_start).count();
+                    clock_t temps_final = clock();
+                    clock_t temps_cpu = (temps_final - temps_initial) / CLOCKS_PER_SEC * 1000; // millisecondes
+                    cout << temps_cpu << "ms" << endl;
+
+
+                    // enchainer_clic(10,3,10);
+                    /* =================================================================================
+                     *
+                     *
+                     *
+                     */
+
+                    // SetCursorPos(0,0); // placer le curseur n'importe ou sur l'ecran
+                    //  Sleep(5000);
+                    //   clic_tache_duree_simple(10,10,"click options");
+                    //  auto t_start = std::chrono::high_resolution_clock::now(); //definis un intervalle de temps
+                    //   mouse_event(MOUSEEVENTF_LEFTDOWN, 10, 100, 0, 0); //simulation double clic gauche
+                    //  auto t_end = std::chrono::high_resolution_clock::now();
+                    //  double elapsed_time_ms = std::chrono::duration<double, std::milli>(t_end-t_start).count();
+                    /*     Sleep(9000);
+                         mouse_event(MOUSEEVENTF_LEFTUP, 0, 0, 0, 0); // double clic droit
+                         string const nomFichier("C:\\Users\\bilel\\Desktop\\CPP/renommerTache.txt");
+                         ofstream monFlux(nomFichier.c_str());
+                         if (monFlux) {
+                             monFlux << "Veuillez renommez votre tache" << endl;
+                             monFlux << "clic a duree" << endl;
+                         } else {
+                             cout << "ERREUR: Impossible d'ouvrir le fichier." << endl;
+                         }*/
+                    //  renommer_tache("C:\\Users\\bilel\\Desktop\\CPP/renommer.txt");
+                    //renommer_tache_lire("C:\\Users\\bilel\\Desktop\\CPP/renommer.txt");
+                    /* while(true) {
+
+
+                         if (GetAsyncKeyState(VK_LBUTTON) & 0x8000) {
+                             std::cout << "Left mouse button clicked!" << std::endl;
+                         }
+                     }
+                     */
+                    return 0;
 
             }
-
-            break;
-        case 2 :
-            cout << "Click Repeat" << endl; // tache 3
-            cout <<"*========================================================*"<<endl;
-            cout << "Souhaitez vous renommer la tache ?" << endl;
-            cout << "Souhaitez vous la supprimer ?" << endl;
-            cout << "Souhaitez vous dupliquez la tache" << endl;
-            cout << "Souhaitez vous ajoutez la tache" << endl;
-            cout << "Veuillez saisir un entier mais compris entre 0 et 3" << endl;
-            switch(var2)
-            {
-                case 0 : cout << "Veuillez saisir le nom d'une tache"<<endl;
-                cin >>tache2;
-                    renommerTache(tache2);
-                    cout <<renommerTache(tache2);
-                    
-                    cout <<"*========================================================*"<<endl;
-                    enchainer_clic(x,y,NOMBRE);
-                    cout <<"*========================================================*"<<endl;
-                    Sleep(9000);
-                    break;
-
-                case 1: cout << "Veuillez saisir une tache que vous souhaitez supprimez"<<endl;
-                cin >> tache2;
-                    supprimerTache(tache2);
-                    cout <<"*========================================================*"<<endl;
-                    enchainer_clic(x,y,NOMBRE);
-                    Sleep(9000);
-                    break;
-                case 2: cout << "Veuillez saisir une tache que vous souhaitez dupliquez "<<endl;
-                cin >>tache2;
-                    dupliquerTache(tache2,10);
-                    cout <<"*========================================================*"<<endl;
-                    enchainer_clic(x,y,NOMBRE);
-                    Sleep(9000);
-                    break;
-                case 3: cout << "Veuillez saisir une tache que vous souhaitez ajoutez dans la liste"<<endl;
-                cin >>tache2;
-                    ajouterTache(tache2);
-                    cout <<"*========================================================*"<<endl;
-                    enchainer_clic(x,y,NOMBRE);
-                    Sleep(9000);
-                    break;
-                default: cout <<"resaisir un entier compris entre 1 et 3"<<endl;
-            }
-            break;
-        case 3 :
-            cout << "Cursor Position" << endl; // tache 4
-            cout <<"*========================================================*"<<endl;
-            cout << "Souhaitez vous renommer la tache ?" << endl;
-            cout << "Souhaitez vous la supprimer ?" << endl;
-            cout << "Souhaitez vous dupliquez la tache" << endl;
-            cout << "Souhaitez vous ajoutez la tache" << endl;
-            cout <<"*========================================================*"<<endl;
-            cout << "Veuillez saisir un entier mais compris entre 1 et 3" << endl;
-            switch(var3)
-            {
-                case 1: cout << "Veuillez saisir une tache que vous souhaitez supprimez"<<endl;
-                    cin >> tache3;
-                    supprimerTache(tache3);
-                    cout <<"*========================================================*"<<endl;
-                    SetCursorPos(x,y);
-                    break;
-                case 2: cout << "Veuillez saisir une tache que vous souhaitez dupliquez "<<endl;
-                    cin >>tache3;
-                    dupliquerTache(tache3,10);
-                    cout <<"*========================================================*"<<endl;
-                    SetCursorPos(x,y);
-                    break;
-                case 3:  cout << "Veuillez saisir une tache que vous souhaitez ajoutez dans la liste"<<endl;
-                    cin >>tache3;
-                    ajouterTache(tache3);
-                    cout <<"*========================================================*"<<endl;
-                    SetCursorPos(x,y);
-                    break;
-                default: cout <<"resaisir un entier compris entre 1 et 3"<<endl;
-            }
-            break;
-        case 4 :
-            cout << "Autre options" << endl; // tache 5
-            cout << "Souhaitez vous simulez un double clic gauche ou bien un double clic droit ?"<<endl;
-            cout <<"*========================================================*"<<endl;
-            cout<<"1 - Vous choississez le double clic gauche"<<endl;
-            cout<<"2 - Vous choississez le double clic droit"<<endl;
-            cin >> val;
-            if (val == 1)
-            {
-                mouse_event(MOUSEEVENTF_LEFTDOWN, 10, 100, 0, 0);
-                Sleep(9000);
-            }
-            else
-            {
-                mouse_event(MOUSEEVENTF_RIGHTDOWN, 10, 100, 0, 0);
-            }
-            cout <<"*========================================================*"<<endl;
-
-            break;
-        default :
-            cout << "resaisir un chiffre entre 1 et 4" << endl;
-
     }
-
-    auto t_end = std::chrono::high_resolution_clock::now();
-    double elapsed_time_ms = std::chrono::duration<double, std::milli>(t_end-t_start).count();
-    clock_t temps_final = clock();
-    clock_t temps_cpu = (temps_final - temps_initial) / CLOCKS_PER_SEC * 1000; // millisecondes
-    cout <<temps_cpu<<"ms"<<endl;
-
-
-   // enchainer_clic(10,3,10);
-    /* =================================================================================
-     *
-     *
-     *
-     */
-
-   // SetCursorPos(0,0); // placer le curseur n'importe ou sur l'ecran
-  //  Sleep(5000);
- //   clic_tache_duree_simple(10,10,"click options");
-  //  auto t_start = std::chrono::high_resolution_clock::now(); //definis un intervalle de temps
-    mouse_event(MOUSEEVENTF_LEFTDOWN, 10, 100, 0, 0); //simulation double clic gauche
-  //  auto t_end = std::chrono::high_resolution_clock::now();
-  //  double elapsed_time_ms = std::chrono::duration<double, std::milli>(t_end-t_start).count();
-Sleep(9000);
-    mouse_event(MOUSEEVENTF_LEFTUP, 0, 0, 0, 0); // double clic droit
-    string const nomFichier("C:\\Users\\bilel\\Desktop\\CPP/renommerTache.txt");
-    ofstream monFlux(nomFichier.c_str());
-    if(monFlux)
-    {
-        monFlux<< "Veuillez renommez votre tache"<<endl;
-        monFlux<< "clic a duree"<<endl;
-    }
-    else{
-        cout << "ERREUR: Impossible d'ouvrir le fichier." << endl;
-    }
-    renommer_tache("C:\\Users\\bilel\\Desktop\\CPP/renommer.txt");
-    return 0;
 }
-
