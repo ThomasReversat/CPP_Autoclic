@@ -20,6 +20,7 @@ public:
     string renommerTache(string mot);
     void historiqueTaches(vector <string>tab,string tache,int i); // insere une tache à la ieme position
     void renommer_tache(string const nomFichier);
+    void renommer_tache_lire(string const nomFichier); // on lit le fichier ecrit par l'utilisateur
 
 };
 
