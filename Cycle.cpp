@@ -1,4 +1,5 @@
 #include "Cycle.hpp"
+
 using namespace std;
 
 void Cycle::clic_ici(int x, int y)
@@ -63,3 +64,4 @@ void Cycle::clic_tache_duree_simple(int x, int y, std::string tache)
     cin >>tache;
     clic_ici(x,y);
 }
+
